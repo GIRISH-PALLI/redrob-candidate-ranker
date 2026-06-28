@@ -1,16 +1,35 @@
-# Redrob Candidate Ranker
+# Redrob Candidate Ranker 🤖
 
-This folder contains a CPU-only baseline ranking script for the hackathon dataset.
+AI-powered Intelligent Candidate Discovery & Ranking Engine  
+Built for **India Runs Hackathon by Redrob AI**
 
-## Layout
-- `data/candidates.jsonl`: input file, kept out of git by `.gitignore`
-- `docs/`: challenge reference docs and schema files
-- `rank.py`: ranking pipeline
-- `requirements.txt`: no third-party dependencies required
+## What it does
+Takes a Job Description and ranks 100,000 candidates intelligently 
+using a hybrid scoring system — not just keyword matching.
 
-## Run
+## How it works
+- **Career Relevance** (60%) — checks if candidate actually built 
+  ranking/retrieval/embeddings systems
+- **Skill Match** (40%) — weighted by proficiency, endorsements, 
+  duration, and verified assessment scores
+- **Behavioral Multiplier** — down-weights inactive/unresponsive candidates
+- **Honeypot Detection** — filters out fake/impossible profiles automatically
+
+## How to run
 ```bash
-python rank.py data/candidates.jsonl
+pip install -r requirements.txt
+python rank.py --candidates ./data/candidates.jsonl --out ./submission.csv
 ```
 
-The script writes `output.csv` with the required `candidate_id,rank,score,reasoning` columns.
+## Tech Stack
+Python · pandas · openpyxl
+
+## Results
+- Ranked 100,000 candidates in **14.5 seconds**
+- Output validated with validate_submission.py ✅
+
+## Live Demo
+https://girish-palli-redrob-candidate-ranker-app-vdzevr.streamlit.app/
+
+## Author
+Girish Kumar Palli | B.Tech CSE @ ANITS
